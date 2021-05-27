@@ -1,9 +1,9 @@
 // const Login = () => {
-//     return ( 
+//     return (
 
 //      );
 // }
- 
+
 // export default Login;
 
 import React, { useContext, useState } from "react";
@@ -15,7 +15,7 @@ import { UserContext } from "../UserContext";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {user, setUser} = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
   function validateForm() {
     // return email.length > 0 && password.length > 0;

@@ -9,28 +9,28 @@ import Chatroom from "./components/Chatroom";
 function App() {
   const [user, setUser] = useState(null);
 
-  const value = useMemo(() => ({user, setUser}), [user, setUser]);
+  const value = useMemo(() => ({ user, setUser }), [user, setUser]);
 
   return (
     <>
-    <Router>
-    <li>
+      <Router>
+        <li>
           <Link to="/">home-page</Link>
         </li>
-    <li>
+        <li>
           <Link to="/login">login-page</Link>
         </li>
         <li>
-        <Link to="/chatroom">chat-page</Link>
+          <Link to="/chatroom">chat-page</Link>
         </li>
-      <Switch>
-        <UserContext.Provider value={value}>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/chatroom" component={Chatroom} />
-        </UserContext.Provider>
-      </Switch>
-    </Router>
+        <Switch>
+          <UserContext.Provider value={value}>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/chatroom" component={Chatroom} />
+          </UserContext.Provider>
+        </Switch>
+      </Router>
     </>
   );
 }
