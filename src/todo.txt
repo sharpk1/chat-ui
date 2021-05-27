@@ -1,0 +1,5 @@
+1. Set up router for login screen - done
+2. find out how to set the state of the username to the next screen or throughout the app
+2a. find out how to set the uhh i forgot
+2. set up route for chat room
+3. 
