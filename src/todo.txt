@@ -1,5 +1,5 @@
-1. Set up router for login screen - done
+1. Set up router for login screen - done - clean it up. It looks ugly af right now
 2. find out how to set the state of the username to the next screen or throughout the app
 2a. find out how to set the uhh i forgot
-2. set up route for chat room
+2. set up route for chat room 
 3. 

@@ -6,14 +6,16 @@
  
 // export default Login;
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "../Login.css";
+import { UserContext } from "../UserContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const {user, setUser} = useContext(UserContext);
 
   function validateForm() {
     // return email.length > 0 && password.length > 0;
@@ -44,6 +46,8 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group> */}
+        <div>{user}</div>
+        <Button onClick={() => setUser(email)}>Change value</Button>
         <Button block size="lg" type="submit" disabled={!validateForm()}>
           Login
         </Button>
