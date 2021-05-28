@@ -11,12 +11,13 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "../Login.css";
 import { UserContext } from "../UserContext";
+import { Link, useHistory } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [password, setPassword] = useState("");
   const { user, setUser } = useContext(UserContext);
-
+  const history = useHistory();
   function validateForm() {
     // return email.length > 0 && password.length > 0;
     return email.length > 0;
@@ -24,6 +25,11 @@ export default function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
+  }
+
+  const loginHandler = () => {
+    setUser(email);
+    history.push("/chatroom");
   }
 
   return (
@@ -47,7 +53,9 @@ export default function Login() {
           />
         </Form.Group> */}
         <div>{user}</div>
-        <Button onClick={() => setUser(email)}>Change value</Button>
+        <Button onClick={loginHandler}>
+          Chatroom login
+        </Button>
         <Button block size="lg" type="submit" disabled={!validateForm()}>
           Login
         </Button>
